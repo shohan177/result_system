@@ -1,6 +1,6 @@
-## This is learning purpose forjec for result calculation system. I use same programing lanaguage here.
+### This is learning purpose forjec for result calculation system. I use same programing lanaguage here.
 
-###  language list
+####  language use
 - HTML 5
 - CSS3
 - PHP
