@@ -1,3 +1,18 @@
+<?php 
+    require_once "../config.php";
+    require_once "../vendor/autoload.php";
+
+    session_start();
+
+    if (empty($_SESSION['id']) || empty($_SESSION['uname'])) {
+        header('location:index.php');
+    }
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" class="app">
 <head>
@@ -83,7 +98,7 @@
                     </section>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/a0.png" alt="..."> </span> John.Smith <b class="caret"></b> </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/a0.png" alt="..."> </span> <?php echo $_SESSION['uname']?><b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight">
                         <li> <span class="arrow top"></span> <a href="#">Settings</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
@@ -116,7 +131,7 @@
                             <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
                                 <div class="clearfix wrapper dk nav-user hidden-xs">
                                     <div class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb avatar pull-left m-r"> <img src="images/a0.png" class="dker" alt="..."> <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt">John.Smith</strong> <b class="caret"></b> </span> <span class="text-muted text-xs block">Art Director</span> </span>
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb avatar pull-left m-r"> <img src="images/a0.png" class="dker" alt="..."> <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt"><?php echo $_SESSION['uname']?></strong> <b class="caret"></b> </span> <span class="text-muted text-xs block"><?php echo $_SESSION['roll']?></span> </span>
                                         </a>
                                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                                             <li> <span class="arrow top hidden-nav-xs"></span> <a href="#">Settings</a> </li>
@@ -234,7 +249,7 @@
 
                                     <section class="row m-b-md">
                                         <div class="col-sm-6">
-                                            <h3 class="m-b-xs text-black">Dashboard</h3> <small>Welcome back, John Smith, <i class="fa fa-map-marker fa-lg text-primary"></i> New York City</small> </div>
+                                            <h3 class="m-b-xs text-black">Dashboard</h3> <small>Welcome back,<?php echo $_SESSION['uname']?>, <i class="fa fa-map-marker fa-lg text-primary"></i> New York City</small> </div>
                                         <div class="col-sm-6 text-right text-left-xs m-t-md">
                                             <div class="btn-group"> <a class="btn btn-rounded btn-default b-2x dropdown-toggle" data-toggle="dropdown">Widgets <span class="caret"></span></a>
                                                 <ul class="dropdown-menu text-left pull-right">

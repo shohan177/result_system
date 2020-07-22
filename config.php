@@ -3,10 +3,10 @@
 	/**
 	 * 	connaction constant 
 	 */
-	defined('HOST','localhost');
-	defined('USER','root');
-	defined('PASS','');
-	defined('DB','edu');
+	define('HOST','localhost');
+	define('USER','root');
+	define('PASS','');
+	define('DB','edu');
 
 
 
