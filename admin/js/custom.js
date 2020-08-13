@@ -1,24 +1,16 @@
 (function($){
 
+// Add new user modal
+		$(document).on('click','#show_add_modal', function(){
+			//alert();
+			
+			$('#user_add_modal').modal('show');
+
+			return false;
 
 
-//update usre infomation
-	$('form#update_info').submit(function(e){
-		e.preventDefault();
-		$.ajax({
-			url: '../app/controller/User.php',
-			data: new FormData(this),
-			contentType: false,
-	 		processData: false,
-	 		method: "POST",
-	 		success: function(data){
-	 			
-	 			alert(data);
-	 		}
-		})
-
-	});
+		});
 
 
 
-})(jQuery)
+})(jQuery);

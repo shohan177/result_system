@@ -15,22 +15,24 @@
 
 
 
-
-
-
-
-
-
-
-
                 <!-- nav -->
                 <nav class="nav-primary hidden-xs">
                     <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Start</div>
                     <ul class="nav nav-main" data-ride="collapse">
                         <li class="active">
-                            <a href="dashbord.php" class="auto"> <i class="i i-statistics icon"> </i> <span class="font-bold">DashBord</span> </a>
+                            <a href="dashbord.php" class="auto"> <i class="fa fa-desktop"> </i> <span class="font-bold">DashBord</span> </a>
                         </li>
                         <li>
+                            <a href="users.php" class="auto"> <i class="fa fa-group"> </i> <span class="font-bold">Users</span> </a>
+                        </li>
+                        <li>
+                            <a href="results.php" class="auto"> <i class="fa fa-envelope"> </i> <span class="font-bold">Results</span> </a>
+                        </li>
+                        <li>
+                            <a href="students.php" class="auto"> <i class="fa fa-group"> </i> <span class="font-bold">Students</span> </a>
+                        </li>
+
+                        <!-- <li>
                             <a href="#" class="auto"> <span class="pull-right text-muted"> <i class="i i-circle-sm-o text"></i> <i class="i i-circle-sm text-active"></i> </span> <b class="badge bg-danger pull-right">4</b> <i class="i i-stack icon"> </i> <span class="font-bold">Layouts</span> </a>
                             <ul class="nav dk">
                                 <li>
@@ -46,7 +48,7 @@
                                     <a href="layout-fluid.html" class="auto"> <i class="i i-dot"></i> <span>Fluid layout</span> </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> -->
 
                     </ul>
                     <div class="line dk hidden-nav-xs"></div>

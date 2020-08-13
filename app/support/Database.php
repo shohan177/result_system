@@ -17,18 +17,18 @@
 		private $db = DB;
 		private $connection;
 
-		/***********************************
+		/**********************
 		 * Data base connection
-		 ***********************************/
+		 ***********************/
 		private	function connection()
 		{
 			return $this -> connection = new PDO("mysql:host =".$this -> host.";dbname=".$this -> db, $this -> user , $this -> pass );
 		}
 
 
-		/************************************
+		/*******************
 		 * find single data
-		 ************************************/
+		 ********************/
 		public function find($table, array $data)
 		{
 			
@@ -58,9 +58,9 @@
 		}
 
 
-		/************************************
+		/*********************
 		 * Update single data
-		 ************************************/
+		 *********************/
 		public function updateData($table,$id ,array $data)
 		{
 			
@@ -77,6 +77,18 @@
 			$stmt -> execute();
 
 
+		}
+
+		/**************************
+		 * show all data from table
+		 *************************/
+
+		public function showAllTableData($table)
+		{
+			
+			$qure = "SELECT * $table";
+			$stmt = $this -> connection() -> prepare($qure);
+			$stmt -> execute();
 		}
 
 

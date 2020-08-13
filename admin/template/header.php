@@ -53,7 +53,7 @@
                 <a href="index.html" class="navbar-brand"> <img src="images/logo.png" class="m-r-sm" alt="scale"> <span class="hidden-nav-xs">Scale</span> </a>
                 <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user"> <i class="fa fa-cog"></i> </a>
             </div>
-            <ul class="nav navbar-nav hidden-xs">
+         <!--    <ul class="nav navbar-nav hidden-xs">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="i i-grid"></i> </a>
                     <section class="dropdown-menu aside-lg bg-white on animated fadeInLeft">
@@ -91,13 +91,13 @@
                         </div>
                     </section>
                 </li>
-            </ul>
-            <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+            </ul> -->
+       <!--      <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
                 <div class="form-group">
                     <div class="input-group"> <span class="input-group-btn"> <button type="submit" class="btn btn-sm bg-white b-white btn-icon"><i class="fa fa-search"></i></button> </span>
                         <input type="text" class="form-control input-sm no-border" placeholder="Search apps, projects..."> </div>
                 </div>
-            </form>
+            </form> -->
             <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
                 <li class="hidden-xs">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="i i-chat3"></i> <span class="badge badge-sm up bg-danger count">2</span> </a>
@@ -115,7 +115,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/a0.png" alt="..."> </span> <?php echo $_SESSION['uname']?><b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight">
-                        <li> <span class="arrow top"></span> <a href="setting.php?id=<?php echo $_SESSION['id']?>">Settings</a> </li>
+                        <li> <span class="arrow top"></span> <a href="password_change.php?id=<?php echo $_SESSION['id']?>">Password Change</a> </li>
                         <li> <a href="profile.html">Profile</a> </li>
                         <!-- <li>
                             <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>

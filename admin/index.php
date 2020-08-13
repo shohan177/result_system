@@ -4,8 +4,8 @@
 
     use App\support\Auth;
     $auth = new Auth;
-
-    echo password_hash("shohan", PASSWORD_DEFAULT);
+    
+    
 
 ?>
 

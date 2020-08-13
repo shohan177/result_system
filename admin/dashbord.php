@@ -15,14 +15,14 @@
                         <div class="col-sm-6">
                             <h3 class="m-b-xs text-black">Dashboard</h3> <small>Welcome back,<?php echo $_SESSION['uname']?>, <i class="fa fa-map-marker fa-lg text-primary"></i> New York City</small> </div>
                         <div class="col-sm-6 text-right text-left-xs m-t-md">
-                            <div class="btn-group"> <a class="btn btn-rounded btn-default b-2x dropdown-toggle" data-toggle="dropdown">Widgets <span class="caret"></span></a>
+                          <!--   <div class="btn-group"> <a class="btn btn-rounded btn-default b-2x dropdown-toggle" data-toggle="dropdown">Widgets <span class="caret"></span></a>
                                 <ul class="dropdown-menu text-left pull-right">
                                     <li><a href="#">Notification</a></li>
                                     <li><a href="#">Messages</a></li>
                                     <li><a href="#">Analysis</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">More settings</a></li>
-                                </ul>
+                                </ul> -->
                             
                     </section>
 
