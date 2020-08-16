@@ -38,6 +38,7 @@
     <script src="js/calendar/demo.js"></script>
     <script src="js/sortable/jquery.sortable.js"></script>
     <script src="js/app.plugin.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     
     
     <script src="js/custom.js"></script>

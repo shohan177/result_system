@@ -76,6 +76,12 @@
 			$stmt = $this -> connection() -> prepare($qure);
 			$stmt -> execute();
 
+			if ($stmt) {
+				return true;
+			}else{
+				return false;
+			}
+
 
 		}
 
@@ -83,15 +89,59 @@
 		 * show all data from table
 		 *************************/
 
-		public function showAllTableData($table)
+		public function showAllTableData($table,$order = "DESC")
 		{
 			
-			$qure = "SELECT * $table";
+			$qure = "SELECT * FROM $table ORDER BY id $order";
 			$stmt = $this -> connection() -> prepare($qure);
 			$stmt -> execute();
+			return $stmt;
 		}
 
+		/**************************
+		 * Insert function
+		 *************************/
 
+		public function insert($table, array $data)
+		{
+			foreach ($data as $key => $value) {
+				
+				$keys[] = $key;
+				$values[] = "'".$value."'";
+			}
+
+			$val = implode(',', $values); 
+			$col = implode(',',$keys);
+
+
+			$qure = "INSERT INTO $table ($col) VALUES ($val)";
+			$stmt = $this -> connection() -> prepare($qure);
+			$stmt -> execute();
+
+			if ($stmt) {
+				return true;
+			}else{
+				return false;
+			}
+
+		}
+
+		/*******************
+		 * delete from table
+		 ******************/
+
+		public function delByid($table,$id)
+		{
+			$qure = "DELETE FROM $table WHERE id = $id";
+			$stmt = $this -> connection() -> prepare($qure);
+			$stmt -> execute();
+
+			if ($stmt) {
+				return true;
+			}else{
+				return false;
+			}
+		}
 	};
 
 

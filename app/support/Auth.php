@@ -39,6 +39,7 @@
 					$_SESSION['uname'] =  $user_data['uname'];
 					$_SESSION['roll'] =  $user_data['roll'];
 					$_SESSION['cell'] =  $user_data['cell'];
+					$_SESSION['photo'] =  $user_data['photo'];
 					
 					header('location:dashbord.php');
 

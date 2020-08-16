@@ -37,7 +37,7 @@
                     <div class="mess"></div>
                     <h2>Add new User</h2>
                     <hr>
-                    <form id = "add_student_form" action="" method="POST" enctype = "multipart/form-data">
+                    <form id = "add_user_form" action="" method="POST" enctype = "multipart/form-data">
                         <div class="form-group">
                             <label for="">Name</label>
                             <input class="form-control" name="name" type="text">
@@ -46,41 +46,44 @@
                         <div class="m-b-sm">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-sm btn-info"> 
-                                    <input type="radio" name="options" id="option1" />
+                                    <input type="radio" name="post" value="admin" id="option1" />
                                     <i class="fa fa-check text-active"></i>Admin 
                                 </label>
                                 <label class="btn btn-sm btn-success">
-                                    <input type="radio" name="options" id="option2" />
+                                    <input type="radio" name="post" value="staff" id="option2" />
                                     <i class="fa fa-check text-active"></i>Staff 
                                 </label>
                                 <label class="btn btn-sm btn-primary">
-                                    <input type="radio" name="options" id="option3" />
+                                    <input type="radio" name="post" value="teacher" id="option3" />
                                     <i class="fa fa-check text-active"></i>Teacher
                                 </label>
                             </div>
                             </div>
-                         <div class="form-group">
+                        <div class="form-group">
+                            <label for="">User Name</label>
+                            <input class="form-control" name="uname" type="text">
+                        </div>
+
+                        <div class="form-group">
                             <label for="">Cell</label>
                             <input class="form-control" name="cell" type="text">
-                        </div>    
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input class="form-control" name="email" type="text">
-                        </div>
+                        </div>  
 
                        
 
-                        <div class="form-group">
+                       
+
+                       <!--  <div class="form-group">
                             <label for="">Photo</label>
                             <input class="form-control" name="photo" type="file">
-                        </div>
+                        </div> -->
                         
 
                         </div>
 
                         <div class="form-group">
                             <label for=""></label>
-                            <input class="btn btn-s-md btn-primary" name="add" type="submit" value="Add student">
+                            <input class="btn btn-s-md btn-primary" name="add" type="submit" value="SAVE">
                         </div>
                     </form>
                 </div>
@@ -91,7 +94,10 @@
                 <!-- modal end -->
 
 
-    <div class="col-sm-12">
+    <div class="col-sm-14">
+        <div class="notifi_mass">
+            
+        </div>
         <section class="panel panel-default">
             <header class="panel-heading"> <a id = "show_add_modal"class="btn btn-sm btn-success" href="#">ADD NEW USER</a></header>
             <table class="table table-striped m-b-none">
@@ -99,6 +105,7 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Post</th>
                         <th>User id</th>
                         <th>Email</th>
                         <th>cell</th>
@@ -109,54 +116,10 @@
                        <!--  <th width="70"></th> -->
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Sarwar jahan shohan</td>
-                        <td>shohan</td>
-                        <td>shohan@gmail.com</td>
-                        <td>0177738207</td>
-                        <td><i class="i i-circle-sm text-success-dk"> Active</i></td>
-                        <td>20/20/2020</td>
-                        <td><img src="images/a0.png" height="40px" width="40px" alt=""></td>
-                        <td>
-                            <a class="btn btn-sm btn-info" href="#">View</a>
-                            <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                            <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                        </td>
-                    </tr>
+                <tbody id="table_data">
+                    
 
-                    <tr>
-                        <td>1</td>
-                        <td>Sarwar jahan shohan</td>
-                        <td>shohan</td>
-                        <td>shohan@gmail.com</td>
-                        <td>0177738207</td>
-                        <td><i class="i i-circle-sm text-success-dk"> Active</i></td>
-                        <td>20/20/2020</td>
-                        <td><img src="images/a0.png" height="40px" width="40px" alt=""></td>
-                        <td>
-                            <a class="btn btn-sm btn-info" href="#">View</a>
-                            <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                            <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Sarwar jahan shohan</td>
-                        <td>shohan</td>
-                        <td>shohan@gmail.com</td>
-                        <td>0177738207</td>
-                        <td><i class="i i-circle-sm text-success-dk"> Active</i></td>
-                        <td>20/20/2020</td>
-                        <td><img src="images/a0.png" height="40px" width="40px" alt=""></td>
-                        <td>
-                            <a class="btn btn-sm btn-info" href="#">View</a>
-                            <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                            <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                        </td>
-                    </tr>
+                   
                 </tbody>
             </table>
         </section>

@@ -31,7 +31,7 @@
 <html lang="en" class="app">
 <head>
     <meta charset="utf-8" />
-    <title>Scale | Web Application</title>
+    <title>Result system</title>
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link rel="stylesheet" href="css/app.v1.css" type="text/css" />
@@ -113,10 +113,10 @@
                     </section>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/a0.png" alt="..."> </span> <?php echo $_SESSION['uname']?><b class="caret"></b> </a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/<?php echo $_SESSION['photo']?>" alt="..."> </span> <?php echo $_SESSION['uname']?><b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight">
                         <li> <span class="arrow top"></span> <a href="password_change.php?id=<?php echo $_SESSION['id']?>">Password Change</a> </li>
-                        <li> <a href="profile.html">Profile</a> </li>
+                        <li> <a id = "user_profile" href="profile.php?id=<?php echo $_SESSION['id']?> ">Profile</a> </li>
                         <!-- <li>
                             <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
                         </li>
