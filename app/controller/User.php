@@ -47,7 +47,7 @@
 			}
 		}
 
-		//edit user
+		//edit user data
 
 		public function getUserVal($id)
 		{
@@ -104,7 +104,7 @@
 	// update user
 		public function updateUser($photo,array $data)
 		{	
-			$id = $_SESSION['id'];
+			$id = $data['id'];
 			$session_poto = $_SESSION['photo'];
 			//if the user not update photo
 			if ($photo == "no") {
@@ -113,6 +113,7 @@
 			}else{
 				$photo_name = $photo;
 			}
+			// if pass is change 
 
 			$responce = parent::updateData('users',$id,[
 

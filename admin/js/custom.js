@@ -100,38 +100,40 @@ showAllData();
 
 	});
 
-// data for edit user
-function editUserData($id){
+//data for edit user
+// function editUserData($id){
 
-	$.ajax({
+// 	$.ajax({
 
-		url: 'template/ajax/edit_user_data.php',
-		data : {u_id : $id},
-		method : "POST",
-		success : function(data){
+// 		url: 'template/ajax/edit_user_data.php',
+// 		data : {u_id : $id},
+// 		method : "POST",
+// 		success : function(data){
 			
-			$('#edit').html(data)
-		}
+// 			//$('#edit').html(data)
+// 		}
 		
-		});
+// 		});
 
-};
+// };
 
 
 
-//edit button click
-$(document).on('click','a#edit_user',function(e){
+// //edit button click
+// $(document).on('click','a#edit_user',function(e){
 	
-	let id = $(this).attr('user_id')
+// 	let id = $(this).attr('user_id')
 	
-	editUserData(id)
-	return false;
-});
+// 	editUserData(id)
+// 	return false;
+// });
 
 // edit user
 
 $(document).on('submit','form#edit_user',function(e){
 	e.preventDefault();
+	//receive id from url
+	let urldata = geturlData()
 	$.ajax({
 		url : 'template/ajax/edit_user.php',
 		data: new FormData(this),
@@ -139,7 +141,7 @@ $(document).on('submit','form#edit_user',function(e){
 		processData: false,
 		method: "POST",
 		success : function(data){
-		viewUser()
+		viewUser(urldata.id)
 		swal("Sucess!", data, "success");
 		}
 
@@ -149,10 +151,28 @@ $(document).on('submit','form#edit_user',function(e){
 });
 
 //view single user
-function viewUser(){
+function viewUser($id){
+
+	let urlData = geturlData()
+	let action = urlData.action
+	
+	if (action == "view") {
+		$("#bio").addClass("active")
+		$("#about").addClass("active")
+		
+	}else if (action == "edit") {
+		$("#edit").addClass("active")
+		$("ul li#uedit").addClass("active")
+	}else{
+		$("#activities").addClass("active")
+		$("ul li#acti").addClass("active")
+
+	}
 
 	$.ajax({
 		url: 'template/ajax/view_user.php',
+		data: {'user_id' : $id},
+		method: "POST",
 		success : function(data){
 			let user_data = JSON.parse(data)
 
@@ -162,18 +182,35 @@ function viewUser(){
 			$('strong#u_roll').text(user_data.roll)
 			$('a#u_cell').text(user_data.cell)
 			$('a#u_email').text(user_data.email)
+			$('input[name="name"]').val(user_data.name)
+			$('input[name="email"]').val(user_data.email)
+			$('input[name="cell"]').val(user_data.cell)
+			$('input[name="uname"]').val(user_data.uname)
+			$('input[name="id"]').val(user_data.id)
 		
 		}
 
 	});
 
 }
+//get url data frome url
+function geturlData(){
 
+	url = window.location.search.slice(1);
+	url = url.replace(/=/g,'":"');
+	url = url.replace(/&/g,'","');
+	url = '{"'+ url +'"}'
+	return urlObj = JSON.parse(url);
+
+}
 
 
 $(document).ready(function(){
+	//get data from url
+	
+	let data = geturlData()
 
-	viewUser()
+	viewUser(data.id)
 })
 
 })(jQuery);

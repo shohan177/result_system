@@ -8,11 +8,12 @@
 <section id="content">
         <section class="vbox">
             <section class="scrollable bg-white">
-                <div class="wrapper-lg bg-white">
+                <div class="wrapper-lg bg-info">
                     <div class="hbox">
                         <aside class="aside-md">
                             <div class="text-center">
-                                <img src="images/<?php echo $_SESSION['photo'] ?>" alt="..." class="img-circle m-b" />
+
+                                <img id="u_phot" src="" alt="..." class="img-circle m-b" />
                                 <div>Profile finished</div>
                                 <div class="">
                                     <div class="progress progress-xs progress-striped active inline m-b-none bg-white" style="width: 128px;">
@@ -28,15 +29,15 @@
                                 <a href="#" class="btn btn-sm btn-icon btn-primary rounded m-b"><i class="fa fa-facebook"></i></a>
                                 <a href="#" class="btn btn-sm btn-icon btn-danger rounded m-b"><i class="fa fa-google-plus"></i></a>
                             </p>
-                            <h3 class="font-bold m-b-none m-t-none"><?php echo $_SESSION['name'] ?></h3>
-                            <p><?php echo $_SESSION['uname'] ?></p>
-                            <p><i class="fa fa-lg fa-circle-o text-primary m-r-sm"></i><strong><?php echo $_SESSION['roll'] ?></strong></p>
+                            <h3 id="u_name" class="font-bold m-b-none m-t-none"></h3>
+                            <p id="u_uname"></p>
+                            <p ><i class="fa fa-lg fa-circle-o text-primary m-r-sm"></i><strong id="u_roll"></strong></p>
                             <ul class="nav nav-pills nav-stacked aside-lg">
                                 <li class="bg-light dk">
-                                    <a href="#"><i class="i i-phone m-r-sm"></i> <?php echo $_SESSION['cell'] ?></a>
+                                    <a id="u_cell" href="#"><i class="i i-phone m-r-sm"></i></a>
                                 </li>
                                 <li class="bg-light dk">
-                                    <a href="#"><i class="i i-mail m-r-sm"></i> <?php echo $_SESSION['email'] ?></a>
+                                    <a id ="u_email" href="#"><i class="i i-mail m-r-sm"></i></a>
                                 </li>
                                 <!-- <li class="bg-light dk">
                                     <a href="#"><i class="i i-chat m-r-sm"></i> Send Message</a>
@@ -45,7 +46,7 @@
                         </aside>
                     </div>
                 </div>
-                <ul class="nav nav-tabs m-b-n-xxs bg-light">
+                <ul class="nav nav-tabs m-b-n-xxs bg-info">
                     <li class="active">
                         <a href="#activities" data-toggle="tab" class="m-l">Activities<span class="badge bg-primary badge-sm m-l-xs">10</span></a>
                     </li>

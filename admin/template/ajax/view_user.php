@@ -8,7 +8,7 @@
 
 	$user = new User;
 
-	$id = $_SESSION['id'];
+	$id = $_POST['user_id'];
 	
 	$responce = $user -> getUserVal($id);
 

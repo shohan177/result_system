@@ -30,16 +30,8 @@
             <label class="col-sm-3 control-label" for="input-id-1">Email:</label>
             <div class="col-sm-5"><input name ="email" value = "<?php echo $udata['email']  ?>" type="text" class="form-control" id="input-id-1" value="drew.willon@scale.com" /></div>
         </div>
-        <div class="line line-dashed b-b line-lg pull-in"></div>
-        <div class="form-group">
-            <label class="col-sm-3 control-label">Password:</label>
-            <div class="col-sm-5"><input name ="cpass" type="password" class="form-control" /></div>
-        </div>
-        <div class="line line-dashed b-b line-lg pull-in"></div>
-        <div class="form-group">
-            <label class="col-sm-3 control-label">Password Again:</label>
-            <div class="col-sm-5"><input name ="npass" type="password" class="form-control" /></div>
-        </div>
+        
+        
         <div class="line line-dashed b-b line-lg pull-in"></div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Phone:</label>

@@ -34,10 +34,10 @@
                             <p ><i class="fa fa-lg fa-circle-o text-primary m-r-sm"></i><strong id="u_roll"></strong></p>
                             <ul class="nav nav-pills nav-stacked aside-lg">
                                 <li class="bg-light dk">
-                                    <a id="u_cell" href="#"><i class="i i-phone m-r-sm"></i></a>
+                                    <a id="u_cell" href=""><i class="i i-phone m-r-sm"></i></a>
                                 </li>
                                 <li class="bg-light dk">
-                                    <a id ="u_email" href="#"><i class="i i-mail m-r-sm"></i></a>
+                                    <a id ="u_email" href=""><i class="i i-mail m-r-sm"></i></a>
                                 </li>
                                 <!-- <li class="bg-light dk">
                                     <a href="#"><i class="i i-chat m-r-sm"></i> Send Message</a>
@@ -47,14 +47,14 @@
                     </div>
                 </div>
                 <ul class="nav nav-tabs m-b-n-xxs bg-light">
-                    <li class="active">
+                    <li id="acti">
                         <a href="#activities" data-toggle="tab" class="m-l">Activities<span class="badge bg-primary badge-sm m-l-xs">10</span></a>
                     </li>
-                    <li><a href="#bio" data-toggle="tab">Bio</a></li>
-                    <li><a href="#edit" id = "edit_user" user_id = "<?php echo $_SESSION['id'] ?>" data-toggle="tab">Edit profile</a></li>
+                    <li id="about" ><a href="#bio" data-toggle="tab">About</a></li>
+                    <li id="uedit"><a href="#edit" id = "edit_user" user_id = "<?php echo $_SESSION['id'] ?>" data-toggle="tab">Edit profile</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="panel tab-pane active" id="activities">
+                    <div  class="panel tab-pane" id="activities">
                         <ul class="list-group no-radius m-b-none m-t-n-xxs list-group-lg no-border">
                             <li class="list-group-item">
                                 <a href="#" class="thumb-sm pull-left m-r-sm"> <img src="images/a0.png" class="img-circle" /> </a>
@@ -100,7 +100,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="tab-pane wrapper-lg" id="bio">
+                    <div  class="tab-pane wrapper-lg" id="bio">
                         <div class="row m-b">
                             <div class="col-xs-6">
                                 <small>Cell Phone</small>
@@ -129,10 +129,44 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane wrapper-lg" id="edit">
+                    <div  class="tab-pane wrapper-lg " id="edit">
                         
                             
-                    <!-- frome section load from custom.ja -->
+                    <form class="form-horizontal" id="edit_user" method="POST" enctype = "multipart/form-data">
+                            <input type="hidden" name="id" value="">
+                           <div class="form-group">
+                               <label class="col-sm-3 control-label">Name:</label>
+                               <div class="col-sm-5"><input id="u_name" name ="name" value = "" type="text" class="form-control" /></div>
+                           </div>
+                           <div class="line line-dashed b-b line-lg pull-in"></div>
+                           <div class="form-group">
+                               <label class="col-sm-3 control-label" for="input-id-1">User Name:</label>
+                               <div class="col-sm-5"><input id="u_uname" name ="uname" value = ""  type="text" class="form-control" id="input-id-1" disabled="disabled" value="drew.willon@scale.com" /></div>
+                           </div>
+                           <div class="line line-dashed b-b line-lg pull-in"></div>
+                           <div class="form-group">
+                               <label class="col-sm-3 control-label" for="input-id-1">Email:</label>
+                               <div class="col-sm-5"><input id="u_email" name ="email" value = "" type="text" class="form-control" id="input-id-1" value="drew.willon@scale.com" /></div>
+                           </div>
+                           
+                           
+                           <div class="line line-dashed b-b line-lg pull-in"></div>
+                           <div class="form-group">
+                               <label class="col-sm-3 control-label">Phone:</label>
+                               <div class="col-sm-5"><input id="u_cell" name ="cell" value = "" type="text" class="form-control" /></div>
+                           </div>
+
+                           <div class="line line-dashed b-b line-lg pull-in"></div>
+                           <div class="form-group">
+                               
+                               <label class="col-sm-3 control-label">photo:</label>
+                               <div class="col-sm-5"><input name = "photo" type="file" class="form-control" /></div>
+                           </div>
+
+                           <div class="form-group">
+                               <div class="col-sm-offset-3 col-sm-5"><button  type="submit" class="btn btn-sm btn-primary">Update</button></div>
+                           </div>
+                       </form>
                     
 
                     </div>

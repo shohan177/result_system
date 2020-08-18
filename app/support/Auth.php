@@ -133,7 +133,7 @@
 		/***************************************
 		 * password change sytem, old pass check
 		 **************************************/
-		public function oldPassCheck($oldPass)
+		public function oldPassCheck($id)
 		{
 			$data = parent::find('users',[
 
