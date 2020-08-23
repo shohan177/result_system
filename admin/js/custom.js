@@ -1,6 +1,6 @@
 (function($){
 
-// Add new user modal
+// show Add new user modal
 		$(document).on('click','#show_add_modal', function(){
 			//alert();
 			
@@ -10,7 +10,19 @@
 
 
 		});
-// adda usser form data
+
+// show Add new student modal
+	$(document).on('click','#student_show_modal', function(){
+		//alert();
+		
+		$('#student_add_modal').modal('show');
+
+		return false;
+
+
+	});
+
+// sent usser form data
 
 	$(document).on('submit','form#add_user_form', function(e){
 		e.preventDefault();
@@ -45,8 +57,58 @@
 
 		};	
 	});
+//sent student from data
+$(document).on('submit','form#add_student_form',function(e){
+	e.preventDefault()
 
-//show all table data
+	let name = $('input[name="name"]').val()
+	let reg = $('input[name="reg"]').val()
+	let roll = $('input[name="roll"]').val()
+	let inst = $('input[name="inst"]').val()
+	let year = $('select[name="year"]').val()
+	let board = $('select[name="board"]').val()
+
+
+	if (name =="" || reg =="" ||  roll =="" || inst =="" || year =="" || board =="") 
+	{
+		//$('.stu_mess').html('<p class = "alert alert-danger"><b>All filds</b> are requeir<button class="close" data-dismiss = "alert">&times;</button></p>')
+		swal("Empty Filds", "All filds are requeirs !!", "error")
+	
+	}else if (document.getElementById("stu_poto").files.length == 0 ) {
+
+		swal("Photo", "you didn't select any photo", "warning")
+		
+	}else {
+			$.ajax({
+
+
+			url : 'template/ajax/add_student.php',
+			method : "POST",
+			data : new FormData(this),
+			contentType : false,
+			processData : false,
+			
+			success : function(data){
+			$('form#add_student_form')[0].reset()
+			$('#student_add_modal').modal('hide');
+			swal("Done", data, "success")
+			showAllStudentData()
+			}
+		});
+	}
+
+	
+
+
+	
+});
+//clear input fild for student 
+$(document).on('click','input#stu_clear',function(){
+	$('form#add_student_form')[0].reset()
+})
+
+
+//show all user table data
 
 function showAllData(){
 	
@@ -60,12 +122,26 @@ function showAllData(){
 };
 showAllData();
 
+//show all student table data 
+function showAllStudentData(){
+	
+	$.ajax({
+		url : 'template/ajax/show_all_student.php',
+		success : function(data){
+			$('tbody#stu_t_body').html(data)
+		}
+	});
+
+}
+showAllStudentData()
 //delete user 
+
 
 	$(document).on('click','a#delete_user',function(e){
 		e.preventDefault();
 
 		let id = $(this).attr('u_id')
+		let table = $(this).attr('u_table')
 
 		swal({
 		  title: "Are you sure?",
@@ -79,10 +155,11 @@ showAllData();
 
 		  	$.ajax({
 		  		url : 'template/ajax/delete_user.php',
-		  		data : { user_id : id},
+		  		data : { user_id : id, table : table},
 		  		method : "POST",
 		  		success : function(data){
 		  			showAllData();
+		  			showAllStudentData()
 		  			swal(data, {
 
 		  			  icon: "success",
@@ -100,35 +177,16 @@ showAllData();
 
 	});
 
-//data for edit user
-// function editUserData($id){
-
-// 	$.ajax({
-
-// 		url: 'template/ajax/edit_user_data.php',
-// 		data : {u_id : $id},
-// 		method : "POST",
-// 		success : function(data){
-			
-// 			//$('#edit').html(data)
-// 		}
-		
-// 		});
-
-// };
+//class remove function 
+function removeActiveClass(){
+	$("#bio").removeClass("active")
+	$("#about").removeClass("active")
+	$("#activities").removeClass("active")
+	$("ul li#acti").removeClass("active")
+}
 
 
-
-// //edit button click
-// $(document).on('click','a#edit_user',function(e){
-	
-// 	let id = $(this).attr('user_id')
-	
-// 	editUserData(id)
-// 	return false;
-// });
-
-// edit user
+ //update user info//
 
 $(document).on('submit','form#edit_user',function(e){
 	e.preventDefault();
@@ -141,8 +199,11 @@ $(document).on('submit','form#edit_user',function(e){
 		processData: false,
 		method: "POST",
 		success : function(data){
+		//refresh page data
 		viewUser(urldata.id)
+		removeActiveClass()
 		swal("Sucess!", data, "success");
+
 		}
 
 	});
@@ -155,15 +216,24 @@ function viewUser($id){
 
 	let urlData = geturlData()
 	let action = urlData.action
-	
+
+	if (action == "profile") {
+		$("#header_color").addClass("bg-info")
+		$("ul#manu_color").addClass("bg-info")
+	}
+
+
 	if (action == "view") {
+
 		$("#bio").addClass("active")
 		$("#about").addClass("active")
 		
 	}else if (action == "edit") {
+
 		$("#edit").addClass("active")
 		$("ul li#uedit").addClass("active")
 	}else{
+
 		$("#activities").addClass("active")
 		$("ul li#acti").addClass("active")
 

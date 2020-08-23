@@ -5,12 +5,14 @@
 
 
 	use App\controller\User;
+	use App\controller\Manage;
 
 	$user = new User;
+	$mng = new Manage;
 
 	$id = $_POST['user_id'];
 	
-	$responce = $user -> getUserVal($id);
+	$responce = $mng -> getUserVal($id,"users");
 
 	$data = $responce -> fetch(PDO::FETCH_ASSOC);
 

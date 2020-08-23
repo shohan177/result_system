@@ -4,32 +4,30 @@
 
 	use App\support\Database;
 
-	class User extends Database
+	class StudentsCon extends Database
 	{
 		// create user
-		public function insertUser($data)
+		public function insertStudent($photo,$data)
 		{
-			$data = parent:: insert("users",[
+			$data = parent:: insert("students",[
 
 				'name' => $_POST['name'],
-				'uname' => $_POST['uname'],
-				'roll' => $_POST['post'],
-				'cell' => $_POST['cell'],
+				'reg' => $_POST['reg'],
+				'roll' => $_POST['roll'],
+				'year' => $_POST['year'],
+				'exm' => $_POST['exm'],
+				'inst' => $_POST['inst'],
+				'photo' =>  $photo
+				
 				
 			]);
 	
 
 				if ($data) {
 					
-					return '<p class = "alert alert-danger"><b>save</b> to database<button class="close" data-dismiss = "alert">&times;</button></p>';
+					return 'Save to Database';
 				}
-
-
-
 		}
-		
-
-
 		
 	// update user
 		public function updateUser($photo,array $data)

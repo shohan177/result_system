@@ -8,7 +8,7 @@
 <section id="content">
         <section class="vbox">
             <section class="scrollable bg-white">
-                <div class="wrapper-lg bg-light">
+                <div id="header_color" class="wrapper-lg bg-light ">
                     <div class="hbox">
                         <aside class="aside-md">
                             <div class="text-center">
@@ -46,7 +46,7 @@
                         </aside>
                     </div>
                 </div>
-                <ul class="nav nav-tabs m-b-n-xxs bg-light">
+                <ul id="manu_color" class="nav nav-tabs m-b-n-xxs bg-light">
                     <li id="acti">
                         <a href="#activities" data-toggle="tab" class="m-l">Activities<span class="badge bg-primary badge-sm m-l-xs">10</span></a>
                     </li>
@@ -131,8 +131,7 @@
                     </div>
                     <div  class="tab-pane wrapper-lg " id="edit">
                         
-                            
-                    <form class="form-horizontal" id="edit_user" method="POST" enctype = "multipart/form-data">
+                            <form class="form-horizontal" id="edit_user" method="POST" enctype = "multipart/form-data">
                             <input type="hidden" name="id" value="">
                            <div class="form-group">
                                <label class="col-sm-3 control-label">Name:</label>

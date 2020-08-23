@@ -4,12 +4,12 @@
 	require_once "../../../vendor/autoload.php";
 
 
-	use App\controller\User;
+	use App\controller\Manage;
 
 
-	$user = new User;
+	$mng = new Manage;
 
-  	$data	=  $user -> delUser($_POST['user_id']);
+  	$data	=  $mng -> delUser($_POST['user_id'],$_POST['table']);
 
 	echo $data;
 

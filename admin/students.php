@@ -30,37 +30,72 @@
 
                 <!-- modal start -->
 
-    <div id="user_add_modal" class="modal fade">
+    <div id="student_add_modal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <div class="mess"></div>
-                    <h2>Add new Student</h2>
+                    <div class="stu_mess"></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3>Add new Student</h3>
                     <hr>
                     <form id = "add_student_form" action="" method="POST" enctype = "multipart/form-data">
-                        <div class="form-group">
-                            <label for="">Name</label>
-                            <input class="form-control" name="name" type="text">
-                        </div>
 
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input class="form-control" name="email" type="text">
-                        </div>
+                    <div class="panel-body">
+            
+                            <div class="form-group">
+                                <label>NAME</label> 
+                                <input name="name" type="text" class="form-control parsley-validated" />
+                            </div>
+                            <div class="form-group">
+                                <label>REG NO</label> 
+                                <input name="reg" type="text" class="form-control parsley-validated"  />
+                            </div>
+                            <div class="form-group">
+                                <label>ROLL NO</label> 
+                                <input name="roll" type="text" class="form-control parsley-validated" />
+                            </div>
 
-                        <div class="form-group">
-                            <label for="">Cell</label>
-                            <input class="form-control" name="cell" type="text">
-                        </div>
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-6">
+                                    <label>BOARD </label>
+                                     <select name="exm" class="form-control">
+                                        <option value="">Examination</option>
+                                        <option value="hsc">HSC/Alim/Equivalent</option>
+                                        <option value="jsc">JSC/JDC</option>
+                                        <option value="ssc">SSC/Dakhil</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>YEAR</label> 
+                                    <select name="year" class="form-control" name="">
+                                        <option value="">select year</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>INSTITUTE</label> 
+                                <input name="inst" type="text" class="form-control parsley-validated" data-type="int"  />
+                            </div>
 
-                        <div class="form-group">
-                            <label for="">Photo</label>
-                            <input class="form-control" name="photo" type="file">
+                            <div class="form-group">
+                                <label>POTO</label> 
+                                <input name="photo" type="file" class="form-control parsley-validated" id="stu_poto"  />
+                            </div>
                         </div>
 
                         <div class="form-group">
                             <label for=""></label>
-                            <input class="btn btn-primary" name="add" type="submit" value="Add student">
+                            <input class="btn btn-s-md btn-success" name="add" type="submit" value="SAVE">
+
+                            <input class="btn btn-s-md btn-warning" id ="stu_clear" type="button" value="CLEAR">
+                            
                         </div>
                     </form>
                 </div>
@@ -70,73 +105,31 @@
 
                 <!-- modal end -->
 
-
     <div class="col-sm-12">
         <section class="panel panel-default">
-            <header class="panel-heading"> <a id = "show_add_modal"class="btn btn-sm btn-success" href="#">ADD NEW STUDENT</a></header>
-            <table class="table table-striped m-b-none">
+            <header class="panel-heading"> <a id = "student_show_modal"class="btn btn-sm btn-success" href="#">ADD NEW STUDENT</a></header>
+            <table class="table table-striped m-b-none table table-hover">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>User id</th>
-                        <th>Email</th>
-                        <th>cell</th>
-                        <th>Status</th>
-                        <th>Created at</th>
+                        <th>Reg No</th>
+                        <th>Roll No</th>
+                        <th>Year</th>
+                        <th>Exm</th>
+                        <th>status</th>
+                        <th>Institute</th>
                         <th>Photo</th>
                         <th>Action</th>
-                       <!--  <th width="70"></th> -->
+                       
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Sarwar jahan shohan</td>
-                        <td>shohan</td>
-                        <td>shohan@gmail.com</td>
-                        <td>0177738207</td>
-                        <td><i class="i i-circle-sm text-success-dk"> Active</i></td>
-                        <td>20/20/2020</td>
-                        <td><img src="images/a0.png" height="40px" width="40px" alt=""></td>
-                        <td>
-                            <a class="btn btn-sm btn-info" href="#">View</a>
-                            <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                            <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                        </td>
-                    </tr>
+                <tbody id="stu_t_body">
+                   
 
-                    <tr>
-                        <td>1</td>
-                        <td>Sarwar jahan shohan</td>
-                        <td>shohan</td>
-                        <td>shohan@gmail.com</td>
-                        <td>0177738207</td>
-                        <td><i class="i i-circle-sm text-success-dk"> Active</i></td>
-                        <td>20/20/2020</td>
-                        <td><img src="images/a0.png" height="40px" width="40px" alt=""></td>
-                        <td>
-                            <a class="btn btn-sm btn-info" href="#">View</a>
-                            <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                            <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                        </td>
-                    </tr>
+                    <!-- data load frome show_all_student.php --> 
 
-                    <tr>
-                        <td>1</td>
-                        <td>Sarwar jahan shohan</td>
-                        <td>shohan</td>
-                        <td>shohan@gmail.com</td>
-                        <td>0177738207</td>
-                        <td><i class="i i-circle-sm text-success-dk"> Active</i></td>
-                        <td>20/20/2020</td>
-                        <td><img src="images/a0.png" height="40px" width="40px" alt=""></td>
-                        <td>
-                            <a class="btn btn-sm btn-info" href="#">View</a>
-                            <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                            <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                        </td>
-                    </tr>
+                    
                 </tbody>
             </table>
         </section>

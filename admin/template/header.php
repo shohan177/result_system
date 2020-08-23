@@ -116,7 +116,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb-sm avatar pull-left"> <img src="images/<?php echo $_SESSION['photo']?>" alt="..."> </span> <?php echo $_SESSION['uname']?><b class="caret"></b> </a>
                     <ul class="dropdown-menu animated fadeInRight">
                         <li> <span class="arrow top"></span> <a href="password_change.php?id=<?php echo $_SESSION['id']?>">Password Change</a> </li>
-                        <li> <a id = "user_profile" href="profile.php?id=<?php echo $_SESSION['id']?> ">Profile</a> </li>
+                        <li> <a id = "user_profile" login_u_id ="<?php echo $_SESSION['id']?> " href="profile.php?id=<?php echo $_SESSION['id']?>&action=profile ">Profile</a> </li>
                         <!-- <li>
                             <a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
                         </li>

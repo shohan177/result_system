@@ -5,12 +5,14 @@
 
 
 	use App\controller\User;
+    use App\controller\Manage;
 
 
 	$user = new User;
+    $mng = new Manage;
+    $id = 1;
 
-
-	$data = $user -> showAll();
+	$data = $mng -> showAll("users");
 
 	$userData = ($data -> fetchAll());
 
@@ -19,7 +21,7 @@
  ?>
 
  <tr>
-     <td>1</td>
+     <td><?php echo $id++ ?></td>
      <td><?php echo $value['name']; ?></td>
      <td><?php echo $value['roll']; ?></td>
      <td><?php echo $value['uname']; ?></td>
@@ -31,7 +33,7 @@
      <td>
          <a class="btn btn-sm btn-info" href="profile.php?id=<?php echo $value['id']; ?>&action=view">View</a>
          <a class="btn btn-sm btn-warning" href="profile.php?id=<?php echo $value['id']; ?>&action=edit">Edit</a>
-         <a class="btn btn-sm btn-danger" id="delete_user" u_id ="<?php echo $value['id']; ?>" href="#">Delete</a>
+         <a class="btn btn-sm btn-danger" id="delete_user" u_table ="users" u_id ="<?php echo $value['id']; ?>" href="#">Delete</a>
      </td>
  </tr>
 	
