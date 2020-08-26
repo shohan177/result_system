@@ -29,47 +29,229 @@
 				<!-- main contain start-->
 
                 <!-- modal start -->
-
-    <div id="user_add_modal" class="modal fade">
+    <!-- result add model start  -->
+    <div id="result_add_modal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
+
                 <div class="modal-body">
                     <div class="mess"></div>
-                    <h2>Add Results</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4>Add student number</h4>
                     <hr>
-                    <form id = "add_student_form" action="" method="POST" enctype = "multipart/form-data">
+                    <section class="panel clearfix bg-info dk"> 
+                        <div class="panel-body"> 
+                            <a href="#" class="thumb pull-left m-r"> 
+                                <img src="images/a0.png" class="img-circle b-a b-3x b-white"> 
+                            </a> 
+                        <div class=""> 
+                            <a class="text-info">
+                                Sarwar Jahan Shohan
+                                
+                            </a> 
+                            <a class="block">
+                                Reg : 123093  Roll : 12131313
+                            </a> 
+                                Dhaka college
+                            </a> 
+                        </div> 
+                    </div> 
+                    </section>
+                    <form id = "result_add_form" action="" method="POST">
                         <div class="form-group">
                             <label for="">Name</label>
                             <input class="form-control" name="name" type="text">
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Email</label>
-                            <input class="form-control" name="email" type="text">
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Cell</label>
-                            <input class="form-control" name="cell" type="text">
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Photo</label>
-                            <input class="form-control" name="photo" type="file">
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
                         </div>
+
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                        </div>
+
 
                         <div class="form-group">
                             <label for=""></label>
-                            <input class="btn btn-primary" name="add" type="submit" value="Add student">
+                            <input class="btn btn-primary" name="add" type="submit" value="SAVE RSULT">
+                            <input class="btn btn-s-md btn-warning" id ="number_clear" type="button" value="CLEAR">
+                            
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <!-- result add model end  -->
 
+    <!-- result update model start  -->
+    <div id="result_update_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="mess"></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4>Add student number</h4>
+                    <hr>
+                    <section class="panel clearfix bg-info dk"> 
+                        <div class="panel-body"> 
+                            <a href="#" class="thumb pull-left m-r"> 
+                                <img src="images/a0.png" class="img-circle b-a b-3x b-white"> 
+                            </a> 
+                        <div class=""> 
+                            <a class="text-info">
+                                Sarwar Jahan Shohan
+                                
+                            </a> 
+                            <a class="block">
+                                Reg : 123093  Roll : 12131313
+                            </a> 
+                                Dhaka college
+                            </a> 
+                        </div> 
+                    </div> 
+                    </section>
+                    <form id = "result_update_form" action="" method="POST">
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input class="form-control" name="name" type="text">
+                        </div>
+
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                        </div>
+
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                        </div>
+
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                        </div>
+
+                        <div class="form-group pull-in clearfix">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input class="btn btn-primary" name="add" type="submit" value="SAVE RSULT">
+                            <input class="btn btn-s-md btn-warning" id ="stu_clear" type="button" value="CLEAR">
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- result update model end  -->
                 <!-- modal end -->
-
+<div style="margin-left:1%; padding: 5px">
+    <a id = "result_add_show"class="btn btn-sm btn-success" href="#">ADD NEW RESULT</a>
+</div>
 <ul id="manu_color" class="nav nav-tabs m-b-n-xxs bg-light">
     <li class="active">
         <a href="#jsc" data-toggle="tab" class="m-l">JSC
@@ -93,7 +275,7 @@
 <div  class=" panel tab-pane active" id="jsc">
     <div class="col-sm-12">
         <section class="panel panel-default">
-            <header class="panel-heading"> <a id = "show_add_modal"class="btn btn-sm btn-success" href="#">ADD NEW RESULT</a></header>
+            <header class="panel-heading"></header>
             <table class="table table-striped m-b-none">
                 <thead>
                     <tr>

@@ -22,6 +22,18 @@
 
 	});
 
+	// show Add result modal
+		$(document).on('click','#result_add_show', function(){
+			$('form#result_add_form')[0].reset()
+			$('#result_add_modal').modal('show');
+			return false;
+
+
+		});
+//number clear
+	$(document).on('click','input#number_clear',function(){
+		$('form#result_add_form')[0].reset()
+	})
 // sent usser form data
 
 	$(document).on('submit','form#add_user_form', function(e){
@@ -60,7 +72,7 @@
 //sent student from data
 $(document).on('submit','form#add_student_form',function(e){
 	e.preventDefault()
-	
+
 
 	let name = $('input[name="name"]').val()
 	let reg = $('input[name="reg"]').val()
