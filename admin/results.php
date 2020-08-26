@@ -70,7 +70,27 @@
 
                 <!-- modal end -->
 
+<ul id="manu_color" class="nav nav-tabs m-b-n-xxs bg-light">
+    <li class="active">
+        <a href="#jsc" data-toggle="tab" class="m-l">JSC
+            <span class="badge bg-warning badge-sm m-l-xs">10</span>
+        </a>
+    </li>
+    <li id="" >
+        <a href="#ssc" data-toggle="tab">SSC
+            <span class="badge bg-warning badge-sm m-l-xs">300</span>
+        </a>
+    </li>
+    <li id="">
+        <a href="#hsc" id = "edit_user"  data-toggle="tab">HSC
+            <span class="badge bg-warning badge-sm m-l-xs">200</span>
+        </a>
+    </li>
+</ul>
 
+<div class="tab-content">
+    <!-- contenter start -->
+<div  class=" panel tab-pane active" id="jsc">
     <div class="col-sm-12">
         <section class="panel panel-default">
             <header class="panel-heading"> <a id = "show_add_modal"class="btn btn-sm btn-success" href="#">ADD NEW RESULT</a></header>
@@ -141,6 +161,17 @@
             </table>
         </section>
     </div>
+</div>
+<div  class="panel tab-pane" id="ssc">
+    ss panal
+</div>
+<div  class="panel tab-pane" id="hsc">
+    hsc panal
+</div>
+<!-- contenter end -->
+</div>
+
+    
 
 
 

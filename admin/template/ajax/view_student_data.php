@@ -10,12 +10,12 @@
 	$user = new User;
 	$mng = new Manage;
 
-	$id = $_POST['user_id'];
+	$id = $_POST['stu_id'];
+
 	
-	
-	$responce = $mng -> getUserVal($id,"users");
+	$responce = $mng -> getUserVal($id ,"students");
 
 	$data = $responce -> fetch(PDO::FETCH_ASSOC);
-
+	
 	echo json_encode($data);
  ?>

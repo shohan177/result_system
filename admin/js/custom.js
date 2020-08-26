@@ -14,7 +14,7 @@
 // show Add new student modal
 	$(document).on('click','#student_show_modal', function(){
 		//alert();
-		
+		$('form#add_student_form')[0].reset()
 		$('#student_add_modal').modal('show');
 
 		return false;
@@ -60,6 +60,7 @@
 //sent student from data
 $(document).on('submit','form#add_student_form',function(e){
 	e.preventDefault()
+	
 
 	let name = $('input[name="name"]').val()
 	let reg = $('input[name="reg"]').val()
@@ -211,11 +212,12 @@ $(document).on('submit','form#edit_user',function(e){
 
 });
 
-//view single user
+//view single user(data load for edit section)
 function viewUser($id){
 
 	let urlData = geturlData()
 	let action = urlData.action
+	let table = "users"
 
 	if (action == "profile") {
 		$("#header_color").addClass("bg-info")
@@ -257,12 +259,67 @@ function viewUser($id){
 			$('input[name="cell"]').val(user_data.cell)
 			$('input[name="uname"]').val(user_data.uname)
 			$('input[name="id"]').val(user_data.id)
+			$('input[name="old_phot"]').val(user_data.photo)
 		
 		}
 
 	});
 
 }
+//view single student data(load data for edit section)
+$(document).on('click','a#view_stu_info',function(e){
+	e.preventDefault();
+	
+	$('#student_edit_modal').modal('show');
+
+	let id = $(this).attr('student_id')
+	$.ajax({
+		url : 'template/ajax/view_student_data.php',
+		data : { 'stu_id' : id},
+		method : "POST",
+		success : function(data){
+			let s_data = JSON.parse(data);
+
+			$('input[name="name"]').val(s_data.name)
+			$('input[name="reg"]').val(s_data.reg)
+			$('input[name="roll"]').val(s_data.roll)
+			$('select[name="exm"]').val(s_data.exm)
+			$('select[name="year"]').val(s_data.year)
+			$('input[name="inst"]').val(s_data.inst)
+			$('input[name="photo_old"]').val(s_data.photo)
+			$('input[name="id"]').val(s_data.id)
+			$('img#s_phot').attr('src','images/students/'+s_data.photo)
+
+
+		}
+
+	});
+	
+});
+//update student 
+$(document).on('submit','form#edit_student_form',function(e){
+	e.preventDefault()
+
+	$.ajax({
+		url : 'template/ajax/edit_student_data.php',
+		data : new FormData(this),
+		contentType: false,
+		processData: false,
+		method: "POST",
+		success : function(data){
+			showAllStudentData()
+			$('#student_edit_modal').modal('hide');
+			swal("Updated!", data, "success");
+
+		}
+
+	})
+
+	
+
+
+});
+
 //get url data frome url
 function geturlData(){
 

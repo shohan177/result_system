@@ -40,7 +40,7 @@
 
 			$condiation = implode(' || ',$arra);
 
-			$qure = "SELECT * FROM users WHERE $condiation";
+			$qure = "SELECT * FROM $table WHERE $condiation";
 			$stmt = $this -> connection() -> prepare($qure);
 
 			$stmt -> execute();

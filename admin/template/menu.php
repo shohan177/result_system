@@ -8,7 +8,8 @@
                 <div class="clearfix wrapper dk nav-user hidden-xs">
                     <div  class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="thumb avatar pull-left m-r"> 
-                            <img  src="images/<?php echo $_SESSION['photo']?>" class="dker" alt="..."> <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt"><?php echo $_SESSION['uname']?></strong></span> <span class="text-muted text-xs block"><?php echo $_SESSION['roll']?></span> </span>
+                            <img src="images/<?php echo $_SESSION['photo']?>" style="height: 50px; width: 50px" > 
+                            <i class="on md b-black"></i> </span> <span class="hidden-nav-xs clear"> <span class="block m-t-xs"> <strong class="font-bold text-lt"><?php echo $_SESSION['uname']?></strong></span> <span class="text-muted text-xs block"><?php echo $_SESSION['roll']?></span> </span>
                         </a>
                     </div>
                 </div>

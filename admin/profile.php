@@ -13,7 +13,7 @@
                         <aside class="aside-md">
                             <div class="text-center">
 
-                                <img id="u_phot" src="" alt="..." class="img-circle m-b" />
+                                <img id="u_phot" height="150" width="150" src="" alt="..." class="img-circle m-b" />
                                 <div>Profile finished</div>
                                 <div class="">
                                     <div class="progress progress-xs progress-striped active inline m-b-none bg-white" style="width: 128px;">
@@ -161,7 +161,7 @@
                                <label class="col-sm-3 control-label">photo:</label>
                                <div class="col-sm-5"><input name = "photo" type="file" class="form-control" /></div>
                            </div>
-
+                                <input type="hidden" name="old_phot" value="" >
                            <div class="form-group">
                                <div class="col-sm-offset-3 col-sm-5"><button  type="submit" class="btn btn-sm btn-primary">Update</button></div>
                            </div>

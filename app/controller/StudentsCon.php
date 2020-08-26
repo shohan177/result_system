@@ -33,34 +33,32 @@
 		public function updateUser($photo,array $data)
 		{	
 			$id = $data['id'];
-			$session_poto = $_SESSION['photo'];
+			$old_photo = $data['photo_old'];
 			//if the user not update photo
 			if ($photo == "no") {
 				
-				$photo_name = $session_poto;
+				$photo_name = $old_photo;
 			}else{
 				$photo_name = $photo;
 			}
 			// if pass is change 
 
-			$responce = parent::updateData('users',$id,[
+			$responce = parent::updateData('students',$id,[
 
 				'name' => $data['name'],
-				'email' => $data['email'],
-				'cell' => $data['cell'],
+				'reg' => $data['reg'],
+				'roll' => $data['roll'],
+				'exm' => $data['exm'],
+				'year' => $data['year'],
+				'inst' => $data['inst'],
 				'photo' => $photo_name
+			
 				
 				
 
 			]);
 
 			if ($responce) {
-
-			
-					$_SESSION['name'] =  $data['name'];
-					$_SESSION['email'] =  $data['email'];
-					$_SESSION['cell'] =  $data['cell'];
-					$_SESSION['photo'] =  $photo_name;
 
 					return 'data updated';
 				

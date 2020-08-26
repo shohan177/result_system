@@ -35,7 +35,8 @@
 		public function updateUser($photo,array $data)
 		{	
 			$id = $data['id'];
-			$session_poto = $_SESSION['photo'];
+			$sid = $_SESSION['id'];
+			$session_poto = $data['old_phot'];
 			//if the user not update photo
 			if ($photo == "no") {
 				
@@ -56,7 +57,7 @@
 
 			]);
 
-			if ($responce) {
+			if ($sid == $id) {
 
 			
 					$_SESSION['name'] =  $data['name'];

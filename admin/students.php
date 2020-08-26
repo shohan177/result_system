@@ -103,6 +103,87 @@
         </div>
     </div>
 
+    <!-- edit model  -->
+
+    <div id="student_edit_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="stu_mess"></div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3>Edit student</h3>
+                    <hr>
+                    <form id = "edit_student_form" action="" method="POST" enctype = "multipart/form-data">
+
+                    <div class="panel-body">
+            
+                            <div class="form-group">
+                                <label>NAME</label> 
+                                <input id="name_s" name="name" type="text" class="form-control parsley-validated" />
+                            </div>
+                        
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-6">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                </div>
+                            </div>
+
+
+                            <div class="form-group pull-in clearfix">
+                                <div class="col-sm-6">
+                                    <label>BOARD </label>
+                                     <select name="exm" class="form-control">
+                                        <option value="">Examination</option>
+                                        <option value="hsc">HSC/Alim/Equivalent</option>
+                                        <option value="jsc">JSC/JDC</option>
+                                        <option value="ssc">SSC/Dakhil</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>YEAR</label> 
+                                    <select name="year" class="form-control" name="">
+                                        <option value="">select year</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>INSTITUTE</label> 
+                                <input name="inst" type="text" class="form-control parsley-validated" data-type="int"  />
+                            </div>
+                                
+                            <div class="form-group">
+                                <input name="photo_old" type="hidden"/>
+                                <input name="id" type="hidden"/>
+                                <img id="s_phot" height="100" width="100"  src="" alt="">
+                                <input name="photo_new" type="file" class="form-control parsley-validated"   />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input class="btn btn-s-md btn-success" name="add" type="submit" value="SAVE">
+
+                            
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
                 <!-- modal end -->
 
     <div class="col-sm-12">

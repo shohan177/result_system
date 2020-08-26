@@ -34,7 +34,7 @@
         <td><img src="images/students/<?php echo $value['photo'] ?>" height="40px" width="40px" alt=""></td>
         <td>
           
-            <a class="btn btn-sm btn-warning" href="#">Edit</a>
+            <a class="btn btn-sm btn-warning" id="view_stu_info" student_id="<?php echo $value['id'] ?>" href="#">Edit</a>
             <a class="btn btn-sm btn-danger" id="delete_user" u_table ="students" u_id ="<?php echo $value['id']; ?>" href="#">Delete</a>
         </td>
     </tr>
