@@ -3,6 +3,7 @@
 	namespace App\controller;
 
 	use App\support\Database;
+	use PDO;
 
 	class StudentsCon extends Database
 	{
@@ -64,6 +65,14 @@
 				
 			}
 		}	
+
+		//student search function 
+
+		public function searchStudent($val)
+		{
+			$data = parent::searchData("students",$val);
+			return $data -> fetchAll(PDO::FETCH_ASSOC);
+		}
 
 	}; //class end
 

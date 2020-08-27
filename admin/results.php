@@ -41,87 +41,91 @@
                     </button>
                     <h4>Add student number</h4>
                     <hr>
-                    <section class="panel clearfix bg-info dk"> 
+                    <section id="stu_section"  class="panel clearfix bg-info dk hidden"> 
                         <div class="panel-body"> 
                             <a href="#" class="thumb pull-left m-r"> 
-                                <img src="images/a0.png" class="img-circle b-a b-3x b-white"> 
+                                <img id="selected_stu" src="" class="img-circle b-a b-3x b-white"> 
                             </a> 
                         <div class=""> 
-                            <a class="text-info">
-                                Sarwar Jahan Shohan
+                            <a id="stu_s_name" class="text-info">
+                                
                                 
                             </a> 
-                            <a class="block">
-                                Reg : 123093  Roll : 12131313
-                            </a> 
-                                Dhaka college
+                            <a id="stu_s_roll"  class="block">
+                            
+                            </a>   
+                            <a id="stu_s_inst" > 
+                                
                             </a> 
                         </div> 
                     </div> 
                     </section>
                     <form id = "result_add_form" action="" method="POST">
                         <div class="form-group">
-                            <label for="">Name</label>
-                            <input class="form-control" name="name" type="text">
+                            <label id="s_lab">Search</label>
+                            <input id="student_search" class="form-control">
+                        </div>
+                        <div class="search_result scrollable">
+                            
                         </div>
 
-                        <div class="form-group pull-in clearfix">
+                        <div class="form-group pull-in clearfix hide">
                                 <div class="col-sm-4">
                                     <label>REG NO </label>
-                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                     <input name="reg" type="text" class="form-control "  />
                                 </div>
                                 <div class="col-sm-4">
                                     <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                    <input name="roll" type="text" class="form-control " />
                                 </div>
                                 <div class="col-sm-4">
                                     <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
-                                </div>
-                        </div>
-
-                        <div class="form-group pull-in clearfix">
-                                <div class="col-sm-4">
-                                    <label>REG NO </label>
-                                     <input name="reg" type="text" class="form-control parsley-validated"  />
-                                </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
-                                </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                    <input name="roll" type="text" class="form-control " />
                                 </div>
                         </div>
 
-                        <div class="form-group pull-in clearfix">
+                        <div class="form-group pull-in clearfix hide">
                                 <div class="col-sm-4">
                                     <label>REG NO </label>
-                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                     <input name="reg" type="text" class="form-control "  />
                                 </div>
                                 <div class="col-sm-4">
                                     <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                    <input name="roll" type="text" class="form-control " />
                                 </div>
                                 <div class="col-sm-4">
                                     <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                    <input name="roll" type="text" class="form-control " />
                                 </div>
                         </div>
 
-                        <div class="form-group pull-in clearfix">
+                        <div class="form-group pull-in clearfix hide">
                                 <div class="col-sm-4">
                                     <label>REG NO </label>
-                                     <input name="reg" type="text" class="form-control parsley-validated"  />
+                                     <input name="reg" type="text" class="form-control "  />
                                 </div>
                                 <div class="col-sm-4">
                                     <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                    <input name="roll" type="text" class="form-control " />
                                 </div>
                                 <div class="col-sm-4">
                                     <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control parsley-validated" />
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                        </div>
+
+                        <div class="form-group pull-in clearfix hide">
+                                <div class="col-sm-4">
+                                    <label>REG NO </label>
+                                     <input name="reg" type="text" class="form-control "  />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div class="col-sm-4">
+                                    <label>ROLL NO</label> 
+                                    <input name="roll" type="text" class="form-control " />
                                 </div>
                         </div>
 

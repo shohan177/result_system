@@ -22,7 +22,7 @@
 
 	});
 
-	// show Add result modal
+// show Add result modal
 		$(document).on('click','#result_add_show', function(){
 			$('form#result_add_form')[0].reset()
 			$('#result_add_modal').modal('show');
@@ -30,10 +30,7 @@
 
 
 		});
-//number clear
-	$(document).on('click','input#number_clear',function(){
-		$('form#result_add_form')[0].reset()
-	})
+
 // sent usser form data
 
 	$(document).on('submit','form#add_user_form', function(e){
@@ -116,10 +113,60 @@ $(document).on('submit','form#add_student_form',function(e){
 	
 });
 //clear input fild for student 
-$(document).on('click','input#stu_clear',function(){
+$(document).on('click','input#stu_clear',function(e){
 	$('form#add_student_form')[0].reset()
+	
 })
 
+//number clear
+	$(document).on('click','input#number_clear',function(){
+		$('form#result_add_form')[0].reset()
+		$('section#stu_section').addClass('hidden')
+		$('.search_result').show()
+		$('input#student_search').attr('disabled',false)
+	})
+
+//search student 
+$(document).on('keyup','input#student_search',function(){
+
+	let serach = $(this).val()
+
+	
+	$.ajax({
+
+		url : 'template/ajax/search.php',
+		method : "POST",
+		data : {'val' : serach},
+		success : function(data){
+			$('.search_result').html(data)
+		}
+	});
+
+});
+// get search result
+$(document).on('click','li#student_select',function(){
+
+	let name = $(this).attr('stu_name')
+	let reg = $(this).attr('stu_reg')
+	let roll = $(this).attr('stu_roll')
+	let photo = $(this).attr('stu_photo')
+	let inst = $(this).attr('stu_inst')
+	let id = $(this).attr('stu_id')
+
+
+	$('.search_result').hide()
+	$('input#student_search').val(id)
+	$('label#s_lab').text('Student id')
+	$('section#stu_section').removeClass('hidden')
+	$('input#student_search').attr('disabled',true)
+	$('img#selected_stu').attr('src','images/students/'+photo)
+	$('a#stu_s_name').text(name)
+	$('a#stu_s_roll').text("Roll : "+ roll +" Reg : " + reg)
+	$('a#stu_s_inst').text(inst)
+
+
+
+})
 
 //show all user table data
 

@@ -142,6 +142,19 @@
 				return false;
 			}
 		}
+
+		/**
+		 * search frome database 
+		 */
+
+		public function searchData($table,$val)
+		{
+			$qure = "SELECT * FROM $table WHERE name LIKE '%$val%'";
+			$stmt = $this -> connection() -> prepare($qure);
+			$stmt -> execute();
+			return $stmt;
+
+		}
 	};
 
 

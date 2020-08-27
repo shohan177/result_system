@@ -1,0 +1,14 @@
+.search_result{
+	max-height: 200px;
+	position: relative;
+
+}
+
+.search_result ul{
+	padding-left: 0px;
+
+}
+
+.search_result ul li:hover{
+	background-color: #DCDCDC;
+}
