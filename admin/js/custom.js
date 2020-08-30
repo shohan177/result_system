@@ -124,6 +124,21 @@ $(document).on('click','input#stu_clear',function(e){
 		$('section#stu_section').addClass('hidden')
 		$('.search_result').show()
 		$('input#student_search').attr('disabled',false)
+		$('#sub_ban').addClass('hide')
+		$('#sub_eng').addClass('hide')
+		$('#sub_math').addClass('hide')
+		$('#sub_reli').addClass('hide')
+		$('#sub_scien').addClass('hide')
+		$('#sub_socal').addClass('hide')
+		$('#sub_phy').addClass('hide')
+		$('#sub_chy').addClass('hide')
+		$('#sub_bio').addClass('hide')
+		$('#sub_ban2').addClass('hide')
+		$('#sub_eng2').addClass('hide')
+		$('#sub_phy2').addClass('hide')
+		$('#sub_chy2').addClass('hide')
+		$('#sub_bio2').addClass('hide')
+			
 	})
 
 //search student 
@@ -152,17 +167,59 @@ $(document).on('click','li#student_select',function(){
 	let photo = $(this).attr('stu_photo')
 	let inst = $(this).attr('stu_inst')
 	let id = $(this).attr('stu_id')
+	let exm = $(this).attr('stu_exm')
 
 
 	$('.search_result').hide()
 	$('input#student_search').val(id)
+	$('input#exm').val(exm)
 	$('label#s_lab').text('Student id')
 	$('section#stu_section').removeClass('hidden')
 	$('input#student_search').attr('disabled',true)
 	$('img#selected_stu').attr('src','images/students/'+photo)
 	$('a#stu_s_name').text(name)
 	$('a#stu_s_roll').text("Roll : "+ roll +" Reg : " + reg)
-	$('a#stu_s_inst').text(inst)
+	$('a#stu_s_inst').text(inst+" exm: "+exm)
+
+	if (exm == "jsc") 
+	{	//input fild for jsc
+		$('#sub_ban').removeClass('hide')
+		$('#sub_eng').removeClass('hide')
+		$('#sub_math').removeClass('hide')
+		$('#sub_reli').removeClass('hide')
+		$('#sub_scien').removeClass('hide')
+		$('#sub_socal').removeClass('hide')
+
+	}else if (exm == "ssc")
+	{
+		//input fild for ssc
+		$('#sub_ban').removeClass('hide')
+		$('#sub_eng').removeClass('hide')
+		$('#sub_math').removeClass('hide')
+		$('#sub_reli').removeClass('hide')
+		$('#sub_scien').removeClass('hide')
+		$('#sub_socal').removeClass('hide')
+		$('#sub_phy').removeClass('hide')
+		$('#sub_chy').removeClass('hide')
+		$('#sub_bio').removeClass('hide')
+
+		
+	}else if (exm == "hsc")
+	{	
+		//input fild for Hsc
+		$('#sub_ban').removeClass('hide')
+		$('#sub_ban2').removeClass('hide')
+		$('#sub_eng').removeClass('hide')
+		$('#sub_eng2').removeClass('hide')
+		$('#sub_math').removeClass('hide')
+		$('#sub_hmath').removeClass('hide')
+		$('#sub_phy').removeClass('hide')
+		$('#sub_phy2').removeClass('hide')
+		$('#sub_chy').removeClass('hide')
+		$('#sub_chy2').removeClass('hide')
+		$('#sub_bio').removeClass('hide')
+		$('#sub_bio2').removeClass('hide')
+	}
 
 
 

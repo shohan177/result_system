@@ -19,6 +19,7 @@
 	stu_photo = "<?php echo $stu['photo']?>"
 	stu_inst = "<?php echo $stu['inst']?>"
 	stu_id = "<?php echo $stu['id']?>"
+	stu_exm = "<?php echo $stu['exm']?>"
 	>
 		<img src="images/students/<?php echo $stu['photo']?>" style="width: 50px; height: 50px; border-radius: 50%; padding: 5px" alt="">
 		<span>  <?php echo $stu['name']?></span>

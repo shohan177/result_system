@@ -64,57 +64,80 @@
                         <div class="form-group">
                             <label id="s_lab">Search</label>
                             <input id="student_search" class="form-control">
+                            <input type="hidden" id="exm">
                         </div>
                         <div class="search_result scrollable">
                             
                         </div>
 
-                        <div class="form-group pull-in clearfix hide">
-                                <div class="col-sm-4">
-                                    <label>REG NO </label>
+                        <div class="form-group pull-in clearfix ">
+                                <div id="sub_ban" class="col-sm-4 hide">
+                                    <label>Bangla 1</label>
                                      <input name="reg" type="text" class="form-control "  />
                                 </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control " />
-                                </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
-                                    <input name="roll" type="text" class="form-control " />
-                                </div>
-                        </div>
-
-                        <div class="form-group pull-in clearfix hide">
-                                <div class="col-sm-4">
-                                    <label>REG NO </label>
+                                <div id="sub_ban2" class="col-sm-4 hide">
+                                    <label>Bangla 2 </label>
                                      <input name="reg" type="text" class="form-control "  />
                                 </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
+                                <div id="sub_eng" class="col-sm-4 hide">
+                                    <label>English 1</label> 
                                     <input name="roll" type="text" class="form-control " />
                                 </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
+                                <div id="sub_eng2" class="col-sm-4 hide">
+                                    <label>English 2</label> 
                                     <input name="roll" type="text" class="form-control " />
                                 </div>
-                        </div>
-
-                        <div class="form-group pull-in clearfix hide">
-                                <div class="col-sm-4">
-                                    <label>REG NO </label>
+                                <div id="sub_math" class="col-sm-4 hide">
+                                    <label>Math</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div id="sub_hmath" class="col-sm-4 hide">
+                                    <label>Higer Math</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div id="sub_reli" class="col-sm-4 hide" hide>
+                                    <label>Religion</label>
                                      <input name="reg" type="text" class="form-control "  />
                                 </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
+                                <div id="sub_scien" class="col-sm-4 hide">
+                                    <label>Science</label> 
                                     <input name="roll" type="text" class="form-control " />
                                 </div>
-                                <div class="col-sm-4">
-                                    <label>ROLL NO</label> 
+                                <div id="sub_socal" class="col-sm-4 hide">
+                                    <label>Socal</label> 
                                     <input name="roll" type="text" class="form-control " />
                                 </div>
+                                <div id="sub_phy" class="col-sm-4 hide">
+                                    <label>Physic 1</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div id="sub_phy2" class="col-sm-4 hide">
+                                    <label>Physic 2</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div id="sub_chy" class="col-sm-4 hide">
+                                    <label>Chimistry 1</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div id="sub_chy2" class="col-sm-4 hide">
+                                    <label>Chimistry 2</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div id="sub_bio" class="col-sm-4 hide">
+                                    <label>Biology 1</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                                <div id="sub_bio2" class="col-sm-4 hide">
+                                    <label>Biology 2</label> 
+                                    <input name="roll" type="text" class="form-control " />
+                                </div>
+                        
+                               
                         </div>
 
-                        <div class="form-group pull-in clearfix hide">
+                     
+
+                        <div class="form-group pull-in clearfix hide ">
                                 <div class="col-sm-4">
                                     <label>REG NO </label>
                                      <input name="reg" type="text" class="form-control "  />
