@@ -69,9 +69,77 @@
 		//student search function 
 
 		public function searchStudent($val)
-		{
+		{	
 			$data = parent::searchData("students",$val);
 			return $data -> fetchAll(PDO::FETCH_ASSOC);
+		}
+
+		//number inser for result 
+		public function insertResult(array $data)
+		{
+			$exm = $data['exm'];
+			// for jsc student 
+			if ($exm == "jsc") {
+				$table = 'jsc';
+
+				$number = array(
+					'student_id' => $data['student_id'],
+					'bng' => $data['bng'],
+					'eng' => $data['eng'],
+					'reli' => $data['eng'],
+					'sci' => $data['sci'],
+					'soc' => $data['soc'],
+					'math' => $data['mat']
+					
+
+				);
+
+			}elseif ($exm == "ssc") 
+			{
+				$table = 'ssc';
+
+				$number = array(
+					'student_id' => $data['student_id'],
+					'bng' => $data['bng'],
+					'eng' => $data['eng'],
+					'reli' => $data['eng'],
+					'sci' => $data['sci'],
+					'soc' => $data['soc'],
+					'mat' => $data['mat'],
+					'phy' => $data['phy'],
+					'chy' => $data['chy'],
+					'bio' => $data['bio']
+					
+
+				);
+			}elseif ($exm == "hsc")
+			{
+				$table = 'hsc';
+
+				$number = array(
+					'student_id' => $data['student_id'],
+					'bng' => $data['bng'],
+					'eng' => $data['eng'],
+					'reli' => $data['eng'],
+					'sci' => $data['sci'],
+					'soc' => $data['soc'],
+					'mat' => $data['mat'],
+					'phy' => $data['phy'],
+					'chy' => $data['chy'],
+					'bio' => $data['bio']
+					
+
+				);
+			}
+			$responce = parent::updateData('students',$data['student_id'],[
+				'status' => 'done']);
+			//data sent database
+			$data = parent:: insert($table,$number);
+
+			if ($data) {
+				return 'save database';
+			}
+
 		}
 
 	}; //class end

@@ -19,7 +19,12 @@
 	$userData = ($data -> fetchAll());
 
 	foreach ($userData as $value) :
-	
+
+	if($value['status'] == "pending"){
+        $color = "warning";
+    }else{
+        $color = "success";
+    } 
  ?>
 	<tr>
         <td><?php echo $id++ ?></td>
@@ -28,7 +33,7 @@
         <td><?php echo $value['roll'] ?></td>
         <td><?php echo $value['year'] ?></td>
         <td><?php echo $value['exm'] ?></td>
-        <td><i class="i i-circle-sm text-success-dk"><?php echo $value['status'] ?></i></td>
+        <td><i class="i i-circle-sm text-<?php echo $color ?>-dk"> <?php echo $value['status'] ?></i></td>
        
         <td><?php echo $value['inst'] ?></td>
         <td><img src="images/students/<?php echo $value['photo'] ?>" height="40px" width="40px" alt=""></td>

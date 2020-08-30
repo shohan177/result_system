@@ -24,7 +24,7 @@
 
 // show Add result modal
 		$(document).on('click','#result_add_show', function(){
-			$('form#result_add_form')[0].reset()
+			
 			$('#result_add_modal').modal('show');
 			return false;
 
@@ -119,45 +119,63 @@ $(document).on('click','input#stu_clear',function(e){
 })
 
 //number clear
-	$(document).on('click','input#number_clear',function(){
-		$('form#result_add_form')[0].reset()
-		$('section#stu_section').addClass('hidden')
-		$('.search_result').show()
-		$('input#student_search').attr('disabled',false)
-		$('#sub_ban').addClass('hide')
-		$('#sub_eng').addClass('hide')
-		$('#sub_math').addClass('hide')
-		$('#sub_reli').addClass('hide')
-		$('#sub_scien').addClass('hide')
-		$('#sub_socal').addClass('hide')
-		$('#sub_phy').addClass('hide')
-		$('#sub_chy').addClass('hide')
-		$('#sub_bio').addClass('hide')
-		$('#sub_ban2').addClass('hide')
-		$('#sub_eng2').addClass('hide')
-		$('#sub_phy2').addClass('hide')
-		$('#sub_chy2').addClass('hide')
-		$('#sub_bio2').addClass('hide')
+function numberClear() {
+	serachStudentData()
+	$('form#result_add_form')[0].reset()
+	$('section#stu_section').addClass('hidden')
+	$('.search_result').show()
+	$('input#student_search').attr('readonly',false)
+	$('#sub_ban').addClass('hide')
+	$('#sub_eng').addClass('hide')
+	$('#sub_math').addClass('hide')
+	$('#sub_reli').addClass('hide')
+	$('#sub_scien').addClass('hide')
+	$('#sub_socal').addClass('hide')
+	$('#sub_phy').addClass('hide')
+	$('#sub_chy').addClass('hide')
+	$('#sub_bio').addClass('hide')
+	$('#sub_ban2').addClass('hide')
+	$('#sub_eng2').addClass('hide')
+	$('#sub_phy2').addClass('hide')
+	$('#sub_chy2').addClass('hide')
+	$('#sub_bio2').addClass('hide')
+	$('#sub_hmath').addClass('hide')	
+}
+//click to clear
+$(document).on('click','input#number_clear',function(){
+		
+	numberClear()	
 			
-	})
+})
+
+
 
 //search student 
-$(document).on('keyup','input#student_search',function(){
+function serachStudentData(value="#") {
 
-	let serach = $(this).val()
-
-	
-	$.ajax({
+		$.ajax({
 
 		url : 'template/ajax/search.php',
 		method : "POST",
-		data : {'val' : serach},
+		data : {'val' : value},
 		success : function(data){
 			$('.search_result').html(data)
 		}
 	});
+}
 
-});
+$(document).on('keyup','input#student_search',function(){
+
+	let serach = $(this).val()
+	serachStudentData(serach)
+	
+
+
+  });
+
+
+
+
 // get search result
 $(document).on('click','li#student_select',function(){
 
@@ -175,12 +193,20 @@ $(document).on('click','li#student_select',function(){
 	$('input#exm').val(exm)
 	$('label#s_lab').text('Student id')
 	$('section#stu_section').removeClass('hidden')
-	$('input#student_search').attr('disabled',true)
+	$('input#student_search').attr('readonly',true)
 	$('img#selected_stu').attr('src','images/students/'+photo)
 	$('a#stu_s_name').text(name)
 	$('a#stu_s_roll').text("Roll : "+ roll +" Reg : " + reg)
 	$('a#stu_s_inst').text(inst+" exm: "+exm)
 
+	exmFilds(exm)
+
+
+
+})
+//exm base fild open
+function exmFilds(exm) {
+	
 	if (exm == "jsc") 
 	{	//input fild for jsc
 		$('#sub_ban').removeClass('hide')
@@ -220,11 +246,26 @@ $(document).on('click','li#student_select',function(){
 		$('#sub_bio').removeClass('hide')
 		$('#sub_bio2').removeClass('hide')
 	}
+}
+//insert result
+$(document).on('submit','form#result_add_form',function(e){
+	e.preventDefault()
 
+	$.ajax({
 
-
-})
-
+		url : 'template/ajax/insertResult.php',
+		data: new FormData(this),
+		method: "POST",
+		processData: false,
+		contentType: false,
+		success: function(data){
+			numberClear()
+			serachStudentData();
+			swal("Done!", data, "success");
+		}
+	})
+	
+});
 //show all user table data
 
 function showAllData(){

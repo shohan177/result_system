@@ -89,10 +89,10 @@
 		 * show all data from table
 		 *************************/
 
-		public function showAllTableData($table,$order = "DESC")
+		public function showAllTableData($table,$order = "DESC", $filter='')
 		{
 			
-			$qure = "SELECT * FROM $table ORDER BY id $order";
+			$qure = "SELECT * FROM $table ORDER BY id $order $filter";
 			$stmt = $this -> connection() -> prepare($qure);
 			$stmt -> execute();
 			return $stmt;
@@ -147,9 +147,9 @@
 		 * search frome database 
 		 */
 
-		public function searchData($table,$val)
+		public function searchData($table,$val,$filter='')
 		{
-			$qure = "SELECT * FROM $table WHERE name LIKE '%$val%'";
+			$qure = "SELECT * FROM $table WHERE name LIKE '%$val%' AND status ='pending' ";
 			$stmt = $this -> connection() -> prepare($qure);
 			$stmt -> execute();
 			return $stmt;

@@ -25,6 +25,7 @@
 		<span>  <?php echo $stu['name']?></span>
 		<span> - Reg : <?php echo $stu['reg']?></span>
 		<span> Roll : <?php echo $stu['roll']?></span>
+		<span> Exm : <?php echo $stu['exm']?></span>
 	</li>
 
  <?php endforeach; ?>
