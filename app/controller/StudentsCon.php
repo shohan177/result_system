@@ -119,13 +119,16 @@
 				$number = array(
 					'student_id' => $data['student_id'],
 					'bng' => $data['bng'],
+					'bng2' => $data['bng2'],
+					'eng2' => $data['eng2'],
 					'eng' => $data['eng'],
-					'reli' => $data['eng'],
-					'sci' => $data['sci'],
-					'soc' => $data['soc'],
-					'mat' => $data['mat'],
+					'mat' => $data['hmat'],
+					'mat2' => $data['mat'],
 					'phy' => $data['phy'],
+					'phy2' => $data['phy'],
 					'chy' => $data['chy'],
+					'chy2' => $data['chy2'],
+					'bio2' => $data['bio2'],
 					'bio' => $data['bio']
 					
 

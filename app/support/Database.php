@@ -155,6 +155,17 @@
 			return $stmt;
 
 		}
+
+		/**
+		 * coustom qure
+		 */
+		public function rowQure($qure)
+		{
+			
+			$stmt = $this -> connection() -> prepare($qure);
+			$stmt -> execute();
+			return $stmt;
+		}
 	};
 
 

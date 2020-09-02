@@ -23,60 +23,38 @@
 		</div>
 		<div class="w-main">
 			<div class="search-result">
-				<form action="">
+				<form action="search.php" method="POST">
 					<table>
 					<tr>
 						<td>Examination</td>
 						<td>
-							<select>
+							<select name="exm">
 	                            <option value="hsc">HSC/Alim/Equivalent</option>
 	                            <option value="jsc">JSC/JDC</option>
 	                            <option value="ssc">SSC/Dakhil</option>
-								<option value="ssc_voc">SSC(Vocational)</option>
-	                            <option value="hsc">HSC/Alim</option>
-								<option value="hsc_voc">HSC(Vocational)</option>
-								<option value="hsc_hbm">HSC(BM)</option>
-								<option value="hsc_dic">Diploma in Commerce</option>
-								<option value="hsc">Diploma in Business Studies</option>
+		
                           	</select>
 						</td>
 					</tr>
 					<tr>
 						<td>Year</td>
 						<td>
-							<select>
+							<select name="year">
                             <option value="0000" selected>Select One</option>
+                            <option value="2020">2020</option>
                             <option value="2019">2019</option>
                             <option value="2018">2018</option>
                             <option value="2017">2017</option>
                             <option value="2016">2016</option>
                             <option value="2015">2015</option>
-                            <option value="2014">2014</option>
-                            <option value="2013">2013</option>
-                            <option value="2012">2012</option>
-                            <option value="2011">2011</option>
-                            <option value="2010">2010</option>
-                            <option value="2009">2009</option>
-                            <option value="2008">2008</option>
-                            <option value="2007">2007</option>
-                            <option value="2006">2006</option>
-                            <option value="2005">2005</option>
-                            <option value="2004">2004</option>
-                            <option value="2003">2003</option>
-                            <option value="2002">2002</option>
-                            <option value="2001">2001</option>
-                            <option value="2000">2000</option>
-                            <option value="1999">1999</option>
-                            <option value="1998">1998</option>
-                            <option value="1997">1997</option>
-                            <option value="1996">1996</option>
+           
                           </select>
 						</td>
 					</tr>
 					<tr>
 						<td>Board</td>
 						<td>
-						 	<select>
+						 	<select name="board">
 		                          <option value=""selected>Select One</option>
 								  <option value="barisal">Barisal</option>
 								  <option value="chittagong">Chittagong</option>
@@ -94,15 +72,15 @@
 					</tr>
 					<tr>
 						<td> Roll</td>
-						<td><input type="text"></td>
+						<td><input name="roll" type="text"></td>
 					</tr>
 					<tr>
 						<td> Reg: No</td>
-						<td><input type="text"></td>
+						<td><input name="reg" type="text"></td>
 					</tr>
 					<tr>
 						<td></td>
-						<td><input type="reset" value="reset"><input type="submit" value="submit"></td>
+						<td><input  type="reset" value="reset"><input  name="result" type="submit" value="submit"></td>
 					</tr>
 				</table>
 				</form>

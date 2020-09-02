@@ -1,3 +1,33 @@
+<?php 
+
+require_once "config.php";
+require_once "vendor/autoload.php";
+
+
+use App\controller\resultController;
+
+	$res = new resultController;
+
+
+	if (isset($_POST['result'])) {
+		$exm = $_POST['exm'];
+		$year = $_POST['year'];
+		$board = $_POST['board'];
+		$reg = $_POST['reg'];
+		$roll = $_POST['roll'];
+
+		$data = $res -> serachResult($exm,$year,$reg,$roll);
+
+	
+	} else {
+
+		header("location:index.php");
+	}
+	
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,24 +53,25 @@
 		</div>
 		<div class="w-main">
 
-
+			<?php if (isset($data['id'])):?>
+			
 				<div class="student-info">
 					<div class="student-photo">
-						<img src="assets/images/Piet-Olivier-photo-passport-size.jpeg" alt="">
+						<img src="admin/images/students/<?php echo $data['photo']?>" alt="">
 					</div>
 					<div class="student-details">
 						<table>
 							<tr>
 								<td>Name</td>
-								<td>Asraful Haque</td>
+								<td><?php echo $data['name']?></td>
 							</tr>
 							<tr>
 								<td>Roll</td>
-								<td>505050</td>
+								<td><?php echo $data['roll']?></td>
 							</tr>
 							<tr>
 								<td>Reg.</td>
-								<td>101010</td>
+								<td><?php echo $data['reg']?></td>
 							</tr>
 							<tr>
 								<td>Board</td>
@@ -48,7 +79,7 @@
 							</tr>
 							<tr>
 								<td>Institute</td>
-								<td>CT</td>
+								<td><?php echo $data['inst']?></td>
 							</tr>
 							<tr>
 								<td>Result</td>
@@ -107,9 +138,17 @@
 						</tr>
 					</table>
 				</div>
+		<?php endif; ?>
+		<?php if (empty($data['id'])):?>
+
+			<div style="height: 170px;">
+				
+				<h2 style="text-align: center; margin-top: 100px; color: red;">Result Not Found</h2>
+				
+			</div>
 
 
-
+		<?php endif; ?>
 
 		</div>
 		<div class="w-footer">
